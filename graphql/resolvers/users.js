@@ -32,7 +32,6 @@ module.exports = {
                 errors.general = 'User not found';
                 throw new UserInputError('Wrong credentials', { errors });
             }
-            console.log(user.password);
             const match = await bcrypt.compare(password, user.password);
             
             if (!match) {
@@ -48,8 +47,6 @@ module.exports = {
                 token
             };
         },
-
-
 
         async register(
             _, 
@@ -96,5 +93,7 @@ module.exports = {
 
 
         }
+
+
     }
 }
